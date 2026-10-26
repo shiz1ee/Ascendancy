@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjp8o7baix3w5"]
+[gd_scene format=3 uid="uid://cjp8o7baix3w5"]
 
-[ext_resource type="Script" uid="uid://cjh7o1g8daseu" path="res://skeleton.gd" id="1_plk42"]
-[ext_resource type="SpriteFrames" uid="uid://oytn5vcb7b20" path="res://skeleton_sprite.tres" id="2_r6xse"]
+[ext_resource type="Script" uid="uid://cjh7o1g8daseu" path="res://scripts/skeleton.gd" id="1_plk42"]
+[ext_resource type="SpriteFrames" uid="uid://oytn5vcb7b20" path="res://resources/skeleton_sprite.tres" id="2_r6xse"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(37, 56)

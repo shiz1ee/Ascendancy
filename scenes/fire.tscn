@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsav6kho82tv0"]
+[gd_scene format=3 uid="uid://bsav6kho82tv0"]
 
-[ext_resource type="Script" uid="uid://dellkqmdqw3gk" path="res://fire.gd" id="1_5ltu8"]
+[ext_resource type="Script" uid="uid://dellkqmdqw3gk" path="res://scripts/fire.gd" id="1_5ltu8"]
 [ext_resource type="Texture2D" uid="uid://2pmacnn8gby5" path="res://assets/sprites/Fire/fire_big.png" id="2_x6ecg"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
 atlas = ExtResource("2_x6ecg")
