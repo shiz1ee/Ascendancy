@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cp464qjahh4xd"]
+[gd_resource type="TileSet" format=3 uid="uid://cp464qjahh4xd"]
 
 [ext_resource type="Texture2D" uid="uid://qin4humxoest" path="res://assets/tilemaps/Dungeon Tile Set.png" id="1_kfwk1"]
 

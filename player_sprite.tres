@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=64 format=3 uid="uid://nuy3mqgfm2ix"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://nuy3mqgfm2ix"]
 
 [ext_resource type="Texture2D" uid="uid://rlo2ydf763q" path="res://assets/sprites/Knight/_AttackNoMovement.png" id="1_j3hia"]
 [ext_resource type="Texture2D" uid="uid://7u6fggs4o7xx" path="res://assets/sprites/Knight/_Attack2NoMovement.png" id="2_4h7iv"]
@@ -238,7 +238,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yaehf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_1",
 "speed": 8.0
 }, {
@@ -261,7 +261,7 @@ animations = [{
 "duration": 0.7,
 "texture": SubResource("AtlasTexture_come4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_2",
 "speed": 8.0
 }, {
@@ -299,7 +299,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jq2sk")
 }],
-"loop": false,
+"loop": 0,
 "name": &"death",
 "speed": 13.0
 }, {
@@ -313,7 +313,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e71vb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -321,7 +321,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rnkwl")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hit",
 "speed": 12.0
 }, {
@@ -356,7 +356,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ycdy4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 12.0
 }, {
@@ -370,7 +370,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hrvbo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -405,7 +405,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2t1y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 12.0
 }, {
@@ -419,7 +419,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_abqjc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"turn",
 "speed": 15.0
 }, {
@@ -433,7 +433,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wnkbs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"wall_slide",
 "speed": 6.0
 }]
