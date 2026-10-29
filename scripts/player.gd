@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 375.0
 const JUMP_VELOCITY = -430.0
-
+var flying = false
+const FLY_SPEED = 600.0
 var wall_x_force = 1000.0
 var wall_y_force = -645.0
 
@@ -69,6 +70,17 @@ func _process(delta: float) -> void:
 				collision.position = Vector2(-8.25, 42.0)
 
 func _physics_process(delta: float) -> void:
+	
+	if OS.is_debug_build() and Input.is_action_just_pressed("debug_fly"):
+		flying = not flying
+		collision.set_deferred("disabled", flying)
+		velocity = Vector2.ZERO
+		
+	if flying:
+		velocity = Input.get_vector("left", "right", "ui_up", "ui_down") * FLY_SPEED
+		move_and_slide()
+		return
+	
 	if not dead:
 		# Gravity
 		if not is_on_floor():
