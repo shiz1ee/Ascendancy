@@ -22,7 +22,7 @@ func take_damage(amount: float) -> void:
 		died.emit()
 
 func heal(amount: float) -> void:
-	if (current >= max_health):
+	if (current <= 0 or current >= max_health):
 		return
 	
 	current = clampf(current + amount, 0.0, max_health)
