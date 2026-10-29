@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cjp8o7baix3w5" path="res://scenes/skeleton.tscn" id="6_jbj1t"]
 [ext_resource type="Script" uid="uid://dqam8peco7o7c" path="res://scripts/player.gd" id="7_muem4"]
 [ext_resource type="SpriteFrames" uid="uid://nuy3mqgfm2ix" path="res://resources/player_sprite.tres" id="8_dp3eg"]
+[ext_resource type="Script" uid="uid://dmyopxs355krh" path="res://scripts/components/hurtbox.gd" id="8_trceg"]
 [ext_resource type="Shape2D" uid="uid://4eth7q632xbf" path="res://player_collision_rectangle.tres" id="9_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bsav6kho82tv0" path="res://scenes/fire.tscn" id="10_gqmmt"]
+[ext_resource type="Script" uid="uid://bx5ssktrm5uyb" path="res://scripts/components/health.gd" id="11_a8y0u"]
 [ext_resource type="Script" uid="uid://b1mk3e6d4ojdc" path="res://scripts/confetti.gd" id="11_yc10j"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5vw27"]
@@ -1282,6 +1284,9 @@ ProgressBar/fonts/font = SubResource("FontFile_kek77")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_4c57u")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_efxa6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chxeh"]
+size = Vector2(56, 78)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
 content_margin_left = 2.0
 content_margin_top = 2.0
@@ -1312,6 +1317,9 @@ ProgressBar/font_sizes/font_size = 16
 ProgressBar/fonts/font = SubResource("FontFile_kek77")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_5vw27")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_kek77")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw3hl"]
+size = Vector2(56, 76)
 
 [sub_resource type="Curve" id="Curve_efxa6"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.9, 0.4), 0.0, 2.0, 0, 0, Vector2(1, 1), 10.0, 0.0, 0, 0]
@@ -1414,6 +1422,17 @@ collision_mask = 4
 safe_margin = 0.14
 script = ExtResource("7_muem4")
 
+[node name="Hurtbox" type="Area2D" parent="Player" unique_id=360706084 node_paths=PackedStringArray("health")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("8_trceg")
+health = NodePath("../Health")
+metadata/_custom_type_script = "uid://dmyopxs355krh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hurtbox" unique_id=1957277521]
+position = Vector2(-10, 43)
+shape = SubResource("RectangleShape2D_chxeh")
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1951051289]
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("8_dp3eg")
@@ -1497,6 +1516,14 @@ theme = SubResource("Theme_4c57u")
 step = 1.0
 value = 100.0
 show_percentage = false
+
+[node name="Collisionshape2D2" type="CollisionShape2D" parent="Player" unique_id=561061533]
+position = Vector2(-9, 42)
+shape = SubResource("RectangleShape2D_cw3hl")
+
+[node name="Health" type="Node" parent="Player" unique_id=1965135680]
+script = ExtResource("11_a8y0u")
+metadata/_custom_type_script = "uid://bx5ssktrm5uyb"
 
 [node name="Skeleton2" parent="." unique_id=119360860 instance=ExtResource("6_jbj1t")]
 position = Vector2(1814, -464)
@@ -2158,4 +2185,5 @@ position = Vector2(651, -2293)
 [connection signal="timeout" from="Player/WallJumpTimer" to="Player" method="_on_wall_jump_timer_timeout"]
 [connection signal="timeout" from="Player/KnockbackTimer" to="Player" method="_on_knockback_timer_timeout"]
 [connection signal="timeout" from="Player/RespawnTimer" to="Player" method="_on_respawn_timer_timeout"]
+[connection signal="died" from="Player/Health" to="Player" method="_on_health_died"]
 [connection signal="body_entered" from="ConfettiActivateArea" to="Confetti" method="_on_confetti_activate_area_body_entered"]

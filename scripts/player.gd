@@ -308,3 +308,7 @@ func _on_respawn_timer_timeout() -> void:
 	healthbar.show()
 	sprite.play("idle")
 	dead = false
+
+
+func _on_health_died() -> void:
+	print("player died via Health")
